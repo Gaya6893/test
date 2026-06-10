@@ -1,0 +1,19 @@
+{
+  "checkpoint": "checkpoints\\best_model.pt",
+  "acc1": 0.029544554455445543,
+  "acc5": 0.04594059405940594,
+  "meets_top1_target": false,
+  "meets_top5_target": false,
+  "worst_categories": {
+    "apple_pie": 0.0,
+    "baby_back_ribs": 0.0,
+    "baklava": 0.0,
+    "beef_carpaccio": 0.0,
+    "beef_tartare": 0.0,
+    "beet_salad": 0.0,
+    "bibimbap": 0.0,
+    "bread_pudding": 0.0,
+    "breakfast_burrito": 0.0,
+    "bruschetta": 0.0
+  }
+}

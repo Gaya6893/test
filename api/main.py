@@ -1,0 +1,187 @@
+"""
+VitalScan Food Recognition API
+
+Endpoints
+---------
+GET  /health            — liveness probe
+POST /scan/photo        — multipart image → nutrition JSON
+POST /scan/barcode      — {"barcode": "..."} → nutrition JSON
+
+Auto-generated OpenAPI docs available at /docs (serves the API documentation
+deliverable for free via FastAPI's built-in Swagger UI).
+
+Environment variables
+---------------------
+MODEL_CHECKPOINT   path to best_model.pt  (default: checkpoints/best_model.pt)
+
+Start locally:
+  uvicorn api.main:app --reload --port 8000
+
+Deploy to Render / Railway: point start command to this file.
+"""
+from __future__ import annotations
+
+import io
+import os
+import sys
+from pathlib import Path
+
+from fastapi import FastAPI, File, HTTPException, UploadFile
+from fastapi.middleware.cors import CORSMiddleware
+from PIL import Image
+
+# Ensure project root is on the path when run as a module
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+from api.schemas import BarcodeScanRequest, Candidate, ScanResponse
+from data.pipeline import get_nutrition_by_barcode, get_nutrition_by_label
+from models.predict import load_model, predict
+
+# ── App setup ─────────────────────────────────────────────────────────────────
+app = FastAPI(
+    title="VitalScan Food Recognition API",
+    description=(
+        "Accepts a food photograph or product barcode and returns a structured "
+        "nutrition JSON conforming to the VitalScan shared contract."
+    ),
+    version="1.0.0",
+    docs_url="/docs",
+    redoc_url="/redoc",
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["GET", "POST"],
+    allow_headers=["*"],
+)
+
+CHECKPOINT = Path(os.environ.get("MODEL_CHECKPOINT", "checkpoints/best_model.pt"))
+_model_ready = False
+
+
+# ── Lifecycle ─────────────────────────────────────────────────────────────────
+@app.on_event("startup")
+async def _startup():
+    global _model_ready
+    if CHECKPOINT.exists():
+        load_model(CHECKPOINT)
+        _model_ready = True
+        print(f"Model loaded from {CHECKPOINT}")
+    else:
+        print(
+            f"WARNING: No checkpoint at {CHECKPOINT}. "
+            "Train the model first, then set MODEL_CHECKPOINT env var."
+        )
+
+
+# ── Health check ──────────────────────────────────────────────────────────────
+@app.get("/health", tags=["Meta"])
+async def health():
+    """Liveness probe. Returns model status so integration partners can verify readiness."""
+    return {"status": "ok", "model_ready": _model_ready, "checkpoint": str(CHECKPOINT)}
+
+
+# ── Photo endpoint ────────────────────────────────────────────────────────────
+@app.post("/scan/photo", response_model=ScanResponse, tags=["Scan"])
+async def scan_photo(file: UploadFile = File(...)):
+    """
+    Identify the food in a photograph and return nutrition information.
+
+    **Confidence tiers** (non-negotiable per project brief):
+    - `high` (>0.60): nutrition returned directly
+    - `medium` (0.30–0.60): nutrition + `top_3_candidates` list
+    - `low` (<0.30): `food_unrecognized=true`, nutrition fields are null
+    """
+    if not _model_ready:
+        raise HTTPException(
+            status_code=503,
+            detail="Model not loaded. Train a checkpoint and restart the server.",
+        )
+
+    raw = await file.read()
+    try:
+        image = Image.open(io.BytesIO(raw)).convert("RGB")
+    except Exception:
+        raise HTTPException(status_code=400, detail="Could not decode image file.")
+
+    prediction = predict(image)
+    return _build_photo_response(prediction)
+
+
+# ── Barcode endpoint ──────────────────────────────────────────────────────────
+@app.post("/scan/barcode", response_model=ScanResponse, tags=["Scan"])
+async def scan_barcode(body: BarcodeScanRequest):
+    """
+    Look up nutrition for a packaged food by EAN-13 or UPC-A barcode.
+
+    Queries the Open Food Facts database (no API key required).
+    All values are per 100 g.
+    """
+    nutrition = get_nutrition_by_barcode(body.barcode)
+    if nutrition is None:
+        raise HTTPException(
+            status_code=404,
+            detail=f"Barcode '{body.barcode}' not found in Open Food Facts.",
+        )
+
+    return ScanResponse(
+        name      = nutrition.get("name"),
+        sodium_mg = nutrition.get("sodium_mg"),
+        sugar_g   = nutrition.get("sugar_g"),
+        carbs_g   = nutrition.get("carbs_g"),
+        calories  = nutrition.get("calories"),
+        fat_g     = nutrition.get("fat_g"),
+        confidence       = 1.0,
+        confidence_tier  = "high",
+        food_unrecognized= None,
+        source           = "open_food_facts",
+    )
+
+
+# ── Response builder ──────────────────────────────────────────────────────────
+def _build_photo_response(prediction: dict) -> ScanResponse:
+    tier = prediction.get("confidence_tier", "low")
+
+    if tier == "low" or prediction.get("food_unrecognized"):
+        return ScanResponse(
+            food_unrecognized = True,
+            confidence        = prediction.get("confidence"),
+            confidence_tier   = "low",
+            top_3_candidates  = _candidates(prediction),
+            source            = "mobilenetv3_food101",
+        )
+
+    label     = prediction.get("nutrition_lookup_key") or prediction.get("label")
+    nutrition = get_nutrition_by_label(label)
+
+    if nutrition is None:
+        # Label recognised but missing from nutrition map — still return recognition
+        return ScanResponse(
+            food_unrecognized = True,
+            confidence        = prediction.get("confidence"),
+            confidence_tier   = tier,
+            top_3_candidates  = _candidates(prediction),
+            source            = "mobilenetv3_food101",
+        )
+
+    return ScanResponse(
+        name      = nutrition["name"],
+        sodium_mg = nutrition["sodium_mg"],
+        sugar_g   = nutrition["sugar_g"],
+        carbs_g   = nutrition["carbs_g"],
+        calories  = nutrition["calories"],
+        fat_g     = nutrition["fat_g"],
+        confidence       = prediction.get("confidence"),
+        confidence_tier  = tier,
+        top_3_candidates = _candidates(prediction) if tier == "medium" else None,
+        food_unrecognized= None,
+        source           = "mobilenetv3_food101",
+    )
+
+
+def _candidates(prediction: dict) -> list[Candidate] | None:
+    raw = prediction.get("top_3_candidates")
+    if not raw:
+        return None
+    return [Candidate(label=c["label"], score=c["score"]) for c in raw]

@@ -1,0 +1,111 @@
+Checkpoint : checkpoints\best_model.pt
+Top-1 Acc  : 0.0295
+Top-5 Acc  : 0.0459
+
+                         precision    recall  f1-score   support
+
+              apple_pie       0.00      0.00      0.00       250
+         baby_back_ribs       0.00      0.00      0.00       250
+                baklava       0.00      0.00      0.00       250
+         beef_carpaccio       0.00      0.00      0.00       250
+           beef_tartare       0.00      0.00      0.00       250
+             beet_salad       0.00      0.00      0.00       250
+               beignets       0.03      1.00      0.06       250
+               bibimbap       0.00      0.00      0.00       250
+          bread_pudding       0.00      0.00      0.00       250
+      breakfast_burrito       0.00      0.00      0.00       250
+             bruschetta       0.00      0.00      0.00       250
+           caesar_salad       0.00      0.00      0.00       250
+                cannoli       0.00      0.00      0.00       250
+          caprese_salad       0.00      0.00      0.00       250
+            carrot_cake       0.00      0.00      0.00       250
+                ceviche       0.00      0.00      0.00       250
+             cheesecake       0.00      0.00      0.00       250
+           cheese_plate       0.00      0.00      0.00       250
+          chicken_curry       0.00      0.00      0.00       250
+     chicken_quesadilla       0.00      0.00      0.00       250
+          chicken_wings       0.00      0.00      0.00       250
+         chocolate_cake       0.00      0.00      0.00       250
+       chocolate_mousse       0.00      0.00      0.00       250
+                churros       0.00      0.00      0.00       250
+           clam_chowder       0.00      0.00      0.00       250
+          club_sandwich       0.00      0.00      0.00       250
+             crab_cakes       0.00      0.00      0.00       250
+           creme_brulee       0.00      0.00      0.00       250
+          croque_madame       0.00      0.00      0.00       250
+              cup_cakes       0.00      0.00      0.00       250
+           deviled_eggs       0.00      0.00      0.00       250
+                 donuts       0.00      0.00      0.00       250
+              dumplings       0.00      0.00      0.00       250
+                edamame       0.00      0.00      0.00       250
+          eggs_benedict       0.00      0.00      0.00       250
+              escargots       0.00      0.00      0.00       250
+                falafel       0.00      0.00      0.00       250
+           filet_mignon       0.00      0.00      0.00       250
+         fish_and_chips       0.00      0.00      0.00       250
+              foie_gras       0.00      0.00      0.00       250
+           french_fries       0.00      0.00      0.00       250
+      french_onion_soup       0.00      0.00      0.00       250
+           french_toast       0.00      0.00      0.00       250
+         fried_calamari       0.00      0.00      0.00       250
+             fried_rice       0.00      0.00      0.00       250
+          frozen_yogurt       0.00      0.00      0.00       250
+           garlic_bread       0.00      0.00      0.00       250
+                gnocchi       0.00      0.00      0.00       250
+            greek_salad       0.00      0.00      0.00       250
+grilled_cheese_sandwich       0.00      0.00      0.00       250
+         grilled_salmon       0.00      0.00      0.00       250
+              guacamole       0.00      0.00      0.00       250
+                  gyoza       0.00      0.00      0.00       250
+              hamburger       0.00      0.00      0.00       250
+      hot_and_sour_soup       0.00      0.00      0.00       250
+                hot_dog       0.00      0.00      0.00       250
+       huevos_rancheros       0.00      0.00      0.00       250
+                 hummus       0.00      0.00      0.00       250
+              ice_cream       0.00      0.00      0.00       250
+                lasagna       0.00      0.00      0.00       250
+         lobster_bisque       0.00      0.00      0.00       250
+  lobster_roll_sandwich       0.00      0.00      0.00       250
+    macaroni_and_cheese       0.00      0.00      0.00       250
+               macarons       0.00      0.00      0.00       250
+              miso_soup       0.00      0.00      0.00       250
+                mussels       0.00      0.00      0.00       250
+                 nachos       0.00      0.00      0.00       250
+               omelette       0.00      0.00      0.00       250
+            onion_rings       0.00      0.00      0.00       250
+                oysters       0.00      0.00      0.00       250
+               pad_thai       0.00      0.00      0.00       250
+                 paella       0.00      0.00      0.00       250
+               pancakes       0.00      0.00      0.00       250
+            panna_cotta       0.00      0.00      0.00       250
+            peking_duck       0.00      0.00      0.00       250
+                    pho       0.00      0.00      0.00       250
+                  pizza       0.00      0.00      0.00       250
+              pork_chop       0.00      0.00      0.00       250
+                poutine       0.00      0.00      0.00       250
+              prime_rib       0.02      0.99      0.05       250
+   pulled_pork_sandwich       0.00      0.00      0.00       250
+                  ramen       0.04      0.99      0.07       250
+                ravioli       0.00      0.00      0.00       250
+        red_velvet_cake       0.00      0.00      0.00       250
+                risotto       0.00      0.00      0.00       250
+                 samosa       0.00      0.00      0.00       250
+                sashimi       0.00      0.00      0.00       250
+               scallops       0.00      0.00      0.00       250
+          seaweed_salad       0.00      0.00      0.00       250
+       shrimp_and_grits       0.00      0.00      0.00       250
+    spaghetti_bolognese       0.00      0.00      0.00       250
+    spaghetti_carbonara       0.00      0.00      0.00       250
+           spring_rolls       0.00      0.00      0.00       250
+                  steak       0.00      0.00      0.00       250
+   strawberry_shortcake       0.00      0.00      0.00       250
+                  sushi       0.00      0.00      0.00       250
+                  tacos       0.00      0.00      0.00       250
+               takoyaki       0.00      0.00      0.00       250
+               tiramisu       0.00      0.00      0.00       250
+           tuna_tartare       0.00      0.00      0.00       250
+                waffles       0.00      0.00      0.00       250
+
+               accuracy                           0.03     25250
+              macro avg       0.00      0.03      0.00     25250
+           weighted avg       0.00      0.03      0.00     25250

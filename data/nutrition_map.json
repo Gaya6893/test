@@ -1,0 +1,911 @@
+{
+  "apple_pie": {
+    "name": "Apple Pie",
+    "fdc_id": 174938,
+    "calories": 237,
+    "fat_g": 11.0,
+    "carbs_g": 34.0,
+    "sugar_g": 14.0,
+    "sodium_mg": 207.0
+  },
+  "baby_back_ribs": {
+    "name": "Baby Back Ribs",
+    "fdc_id": null,
+    "calories": 280,
+    "fat_g": 18.0,
+    "carbs_g": 3.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 75.0
+  },
+  "baklava": {
+    "name": "Baklava",
+    "fdc_id": null,
+    "calories": 428,
+    "fat_g": 23.0,
+    "carbs_g": 52.0,
+    "sugar_g": 32.0,
+    "sodium_mg": 192.0
+  },
+  "beef_carpaccio": {
+    "name": "Beef Carpaccio",
+    "fdc_id": null,
+    "calories": 150,
+    "fat_g": 8.0,
+    "carbs_g": 2.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 280.0
+  },
+  "beef_tartare": {
+    "name": "Beef Tartare",
+    "fdc_id": null,
+    "calories": 152,
+    "fat_g": 8.0,
+    "carbs_g": 2.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 340.0
+  },
+  "beet_salad": {
+    "name": "Beet Salad",
+    "fdc_id": null,
+    "calories": 65,
+    "fat_g": 3.0,
+    "carbs_g": 8.0,
+    "sugar_g": 6.0,
+    "sodium_mg": 180.0
+  },
+  "beignets": {
+    "name": "Beignets",
+    "fdc_id": null,
+    "calories": 349,
+    "fat_g": 15.0,
+    "carbs_g": 49.0,
+    "sugar_g": 14.0,
+    "sodium_mg": 343.0
+  },
+  "bibimbap": {
+    "name": "Bibimbap",
+    "fdc_id": null,
+    "calories": 120,
+    "fat_g": 3.0,
+    "carbs_g": 19.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 350.0
+  },
+  "bread_pudding": {
+    "name": "Bread Pudding",
+    "fdc_id": null,
+    "calories": 218,
+    "fat_g": 8.0,
+    "carbs_g": 32.0,
+    "sugar_g": 18.0,
+    "sodium_mg": 230.0
+  },
+  "breakfast_burrito": {
+    "name": "Breakfast Burrito",
+    "fdc_id": null,
+    "calories": 218,
+    "fat_g": 10.0,
+    "carbs_g": 24.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 520.0
+  },
+  "bruschetta": {
+    "name": "Bruschetta",
+    "fdc_id": null,
+    "calories": 190,
+    "fat_g": 7.0,
+    "carbs_g": 27.0,
+    "sugar_g": 3.0,
+    "sodium_mg": 420.0
+  },
+  "caesar_salad": {
+    "name": "Caesar Salad",
+    "fdc_id": null,
+    "calories": 186,
+    "fat_g": 15.0,
+    "carbs_g": 8.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 380.0
+  },
+  "cannoli": {
+    "name": "Cannoli",
+    "fdc_id": null,
+    "calories": 380,
+    "fat_g": 22.0,
+    "carbs_g": 41.0,
+    "sugar_g": 24.0,
+    "sodium_mg": 140.0
+  },
+  "caprese_salad": {
+    "name": "Caprese Salad",
+    "fdc_id": null,
+    "calories": 157,
+    "fat_g": 11.0,
+    "carbs_g": 4.0,
+    "sugar_g": 3.0,
+    "sodium_mg": 290.0
+  },
+  "carrot_cake": {
+    "name": "Carrot Cake",
+    "fdc_id": null,
+    "calories": 360,
+    "fat_g": 18.0,
+    "carbs_g": 48.0,
+    "sugar_g": 32.0,
+    "sodium_mg": 290.0
+  },
+  "ceviche": {
+    "name": "Ceviche",
+    "fdc_id": null,
+    "calories": 90,
+    "fat_g": 2.0,
+    "carbs_g": 8.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 420.0
+  },
+  "cheese_plate": {
+    "name": "Cheese Plate",
+    "fdc_id": null,
+    "calories": 380,
+    "fat_g": 30.0,
+    "carbs_g": 5.0,
+    "sugar_g": 1.0,
+    "sodium_mg": 650.0
+  },
+  "cheesecake": {
+    "name": "Cheesecake",
+    "fdc_id": null,
+    "calories": 321,
+    "fat_g": 22.0,
+    "carbs_g": 26.0,
+    "sugar_g": 18.0,
+    "sodium_mg": 200.0
+  },
+  "chicken_curry": {
+    "name": "Chicken Curry",
+    "fdc_id": null,
+    "calories": 185,
+    "fat_g": 12.0,
+    "carbs_g": 8.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 380.0
+  },
+  "chicken_quesadilla": {
+    "name": "Chicken Quesadilla",
+    "fdc_id": null,
+    "calories": 256,
+    "fat_g": 13.0,
+    "carbs_g": 22.0,
+    "sugar_g": 1.0,
+    "sodium_mg": 520.0
+  },
+  "chicken_wings": {
+    "name": "Chicken Wings",
+    "fdc_id": null,
+    "calories": 290,
+    "fat_g": 19.0,
+    "carbs_g": 8.0,
+    "sugar_g": 1.0,
+    "sodium_mg": 380.0
+  },
+  "chocolate_cake": {
+    "name": "Chocolate Cake",
+    "fdc_id": null,
+    "calories": 371,
+    "fat_g": 16.0,
+    "carbs_g": 55.0,
+    "sugar_g": 38.0,
+    "sodium_mg": 242.0
+  },
+  "chocolate_mousse": {
+    "name": "Chocolate Mousse",
+    "fdc_id": null,
+    "calories": 270,
+    "fat_g": 18.0,
+    "carbs_g": 26.0,
+    "sugar_g": 22.0,
+    "sodium_mg": 60.0
+  },
+  "churros": {
+    "name": "Churros",
+    "fdc_id": null,
+    "calories": 372,
+    "fat_g": 18.0,
+    "carbs_g": 48.0,
+    "sugar_g": 8.0,
+    "sodium_mg": 290.0
+  },
+  "clam_chowder": {
+    "name": "Clam Chowder",
+    "fdc_id": null,
+    "calories": 123,
+    "fat_g": 6.0,
+    "carbs_g": 12.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 490.0
+  },
+  "club_sandwich": {
+    "name": "Club Sandwich",
+    "fdc_id": null,
+    "calories": 256,
+    "fat_g": 11.0,
+    "carbs_g": 25.0,
+    "sugar_g": 4.0,
+    "sodium_mg": 690.0
+  },
+  "crab_cakes": {
+    "name": "Crab Cakes",
+    "fdc_id": null,
+    "calories": 220,
+    "fat_g": 13.0,
+    "carbs_g": 12.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 580.0
+  },
+  "creme_brulee": {
+    "name": "Crème Brûlée",
+    "fdc_id": null,
+    "calories": 262,
+    "fat_g": 19.0,
+    "carbs_g": 20.0,
+    "sugar_g": 18.0,
+    "sodium_mg": 80.0
+  },
+  "croque_madame": {
+    "name": "Croque Madame",
+    "fdc_id": null,
+    "calories": 280,
+    "fat_g": 16.0,
+    "carbs_g": 20.0,
+    "sugar_g": 3.0,
+    "sodium_mg": 580.0
+  },
+  "cup_cakes": {
+    "name": "Cupcakes",
+    "fdc_id": null,
+    "calories": 340,
+    "fat_g": 14.0,
+    "carbs_g": 51.0,
+    "sugar_g": 32.0,
+    "sodium_mg": 210.0
+  },
+  "deviled_eggs": {
+    "name": "Deviled Eggs",
+    "fdc_id": null,
+    "calories": 190,
+    "fat_g": 15.0,
+    "carbs_g": 2.0,
+    "sugar_g": 1.0,
+    "sodium_mg": 280.0
+  },
+  "donuts": {
+    "name": "Donuts",
+    "fdc_id": null,
+    "calories": 452,
+    "fat_g": 25.0,
+    "carbs_g": 51.0,
+    "sugar_g": 18.0,
+    "sodium_mg": 340.0
+  },
+  "dumplings": {
+    "name": "Dumplings",
+    "fdc_id": null,
+    "calories": 190,
+    "fat_g": 7.0,
+    "carbs_g": 25.0,
+    "sugar_g": 1.0,
+    "sodium_mg": 380.0
+  },
+  "edamame": {
+    "name": "Edamame",
+    "fdc_id": 168411,
+    "calories": 121,
+    "fat_g": 5.0,
+    "carbs_g": 9.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 6.0
+  },
+  "eggs_benedict": {
+    "name": "Eggs Benedict",
+    "fdc_id": null,
+    "calories": 245,
+    "fat_g": 17.0,
+    "carbs_g": 15.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 680.0
+  },
+  "escargots": {
+    "name": "Escargots",
+    "fdc_id": null,
+    "calories": 90,
+    "fat_g": 5.0,
+    "carbs_g": 3.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 380.0
+  },
+  "falafel": {
+    "name": "Falafel",
+    "fdc_id": 174262,
+    "calories": 333,
+    "fat_g": 18.0,
+    "carbs_g": 32.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 294.0
+  },
+  "filet_mignon": {
+    "name": "Filet Mignon",
+    "fdc_id": null,
+    "calories": 271,
+    "fat_g": 18.0,
+    "carbs_g": 0.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 55.0
+  },
+  "fish_and_chips": {
+    "name": "Fish and Chips",
+    "fdc_id": null,
+    "calories": 285,
+    "fat_g": 14.0,
+    "carbs_g": 30.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 480.0
+  },
+  "foie_gras": {
+    "name": "Foie Gras",
+    "fdc_id": null,
+    "calories": 462,
+    "fat_g": 44.0,
+    "carbs_g": 5.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 680.0
+  },
+  "french_fries": {
+    "name": "French Fries",
+    "fdc_id": 170720,
+    "calories": 312,
+    "fat_g": 15.0,
+    "carbs_g": 41.0,
+    "sugar_g": 0.3,
+    "sodium_mg": 210.0
+  },
+  "french_onion_soup": {
+    "name": "French Onion Soup",
+    "fdc_id": null,
+    "calories": 85,
+    "fat_g": 3.0,
+    "carbs_g": 10.0,
+    "sugar_g": 4.0,
+    "sodium_mg": 640.0
+  },
+  "french_toast": {
+    "name": "French Toast",
+    "fdc_id": null,
+    "calories": 229,
+    "fat_g": 10.0,
+    "carbs_g": 27.0,
+    "sugar_g": 9.0,
+    "sodium_mg": 380.0
+  },
+  "fried_calamari": {
+    "name": "Fried Calamari",
+    "fdc_id": null,
+    "calories": 285,
+    "fat_g": 14.0,
+    "carbs_g": 20.0,
+    "sugar_g": 1.0,
+    "sodium_mg": 480.0
+  },
+  "fried_rice": {
+    "name": "Fried Rice",
+    "fdc_id": null,
+    "calories": 174,
+    "fat_g": 5.0,
+    "carbs_g": 27.0,
+    "sugar_g": 1.0,
+    "sodium_mg": 380.0
+  },
+  "frozen_yogurt": {
+    "name": "Frozen Yogurt",
+    "fdc_id": null,
+    "calories": 159,
+    "fat_g": 4.0,
+    "carbs_g": 28.0,
+    "sugar_g": 22.0,
+    "sodium_mg": 63.0
+  },
+  "garlic_bread": {
+    "name": "Garlic Bread",
+    "fdc_id": null,
+    "calories": 350,
+    "fat_g": 16.0,
+    "carbs_g": 44.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 590.0
+  },
+  "gnocchi": {
+    "name": "Gnocchi",
+    "fdc_id": null,
+    "calories": 200,
+    "fat_g": 3.0,
+    "carbs_g": 39.0,
+    "sugar_g": 1.0,
+    "sodium_mg": 290.0
+  },
+  "greek_salad": {
+    "name": "Greek Salad",
+    "fdc_id": null,
+    "calories": 92,
+    "fat_g": 7.0,
+    "carbs_g": 6.0,
+    "sugar_g": 4.0,
+    "sodium_mg": 520.0
+  },
+  "grilled_cheese_sandwich": {
+    "name": "Grilled Cheese Sandwich",
+    "fdc_id": null,
+    "calories": 320,
+    "fat_g": 18.0,
+    "carbs_g": 28.0,
+    "sugar_g": 4.0,
+    "sodium_mg": 690.0
+  },
+  "grilled_salmon": {
+    "name": "Grilled Salmon",
+    "fdc_id": 175168,
+    "calories": 208,
+    "fat_g": 13.0,
+    "carbs_g": 0.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 63.0
+  },
+  "guacamole": {
+    "name": "Guacamole",
+    "fdc_id": 171706,
+    "calories": 160,
+    "fat_g": 15.0,
+    "carbs_g": 9.0,
+    "sugar_g": 0.7,
+    "sodium_mg": 254.0
+  },
+  "gyoza": {
+    "name": "Gyoza",
+    "fdc_id": null,
+    "calories": 190,
+    "fat_g": 8.0,
+    "carbs_g": 22.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 420.0
+  },
+  "hamburger": {
+    "name": "Hamburger",
+    "fdc_id": null,
+    "calories": 295,
+    "fat_g": 14.0,
+    "carbs_g": 24.0,
+    "sugar_g": 5.0,
+    "sodium_mg": 396.0
+  },
+  "hot_and_sour_soup": {
+    "name": "Hot and Sour Soup",
+    "fdc_id": null,
+    "calories": 76,
+    "fat_g": 2.0,
+    "carbs_g": 10.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 520.0
+  },
+  "hot_dog": {
+    "name": "Hot Dog",
+    "fdc_id": null,
+    "calories": 290,
+    "fat_g": 18.0,
+    "carbs_g": 22.0,
+    "sugar_g": 5.0,
+    "sodium_mg": 680.0
+  },
+  "huevos_rancheros": {
+    "name": "Huevos Rancheros",
+    "fdc_id": null,
+    "calories": 198,
+    "fat_g": 11.0,
+    "carbs_g": 16.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 480.0
+  },
+  "hummus": {
+    "name": "Hummus",
+    "fdc_id": 174287,
+    "calories": 177,
+    "fat_g": 10.0,
+    "carbs_g": 17.0,
+    "sugar_g": 1.0,
+    "sodium_mg": 379.0
+  },
+  "ice_cream": {
+    "name": "Ice Cream",
+    "fdc_id": 167579,
+    "calories": 207,
+    "fat_g": 11.0,
+    "carbs_g": 25.0,
+    "sugar_g": 21.0,
+    "sodium_mg": 80.0
+  },
+  "lasagna": {
+    "name": "Lasagna",
+    "fdc_id": null,
+    "calories": 166,
+    "fat_g": 8.0,
+    "carbs_g": 14.0,
+    "sugar_g": 3.0,
+    "sodium_mg": 420.0
+  },
+  "lobster_bisque": {
+    "name": "Lobster Bisque",
+    "fdc_id": null,
+    "calories": 110,
+    "fat_g": 5.0,
+    "carbs_g": 10.0,
+    "sugar_g": 3.0,
+    "sodium_mg": 580.0
+  },
+  "lobster_roll_sandwich": {
+    "name": "Lobster Roll Sandwich",
+    "fdc_id": null,
+    "calories": 255,
+    "fat_g": 12.0,
+    "carbs_g": 24.0,
+    "sugar_g": 3.0,
+    "sodium_mg": 580.0
+  },
+  "macaroni_and_cheese": {
+    "name": "Macaroni and Cheese",
+    "fdc_id": null,
+    "calories": 310,
+    "fat_g": 15.0,
+    "carbs_g": 33.0,
+    "sugar_g": 6.0,
+    "sodium_mg": 620.0
+  },
+  "macarons": {
+    "name": "Macarons",
+    "fdc_id": null,
+    "calories": 420,
+    "fat_g": 14.0,
+    "carbs_g": 70.0,
+    "sugar_g": 58.0,
+    "sodium_mg": 80.0
+  },
+  "miso_soup": {
+    "name": "Miso Soup",
+    "fdc_id": null,
+    "calories": 40,
+    "fat_g": 2.0,
+    "carbs_g": 4.0,
+    "sugar_g": 1.0,
+    "sodium_mg": 890.0
+  },
+  "mussels": {
+    "name": "Mussels",
+    "fdc_id": 175183,
+    "calories": 86,
+    "fat_g": 2.0,
+    "carbs_g": 4.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 286.0
+  },
+  "nachos": {
+    "name": "Nachos",
+    "fdc_id": null,
+    "calories": 346,
+    "fat_g": 18.0,
+    "carbs_g": 40.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 580.0
+  },
+  "omelette": {
+    "name": "Omelette",
+    "fdc_id": null,
+    "calories": 154,
+    "fat_g": 11.0,
+    "carbs_g": 1.0,
+    "sugar_g": 1.0,
+    "sodium_mg": 280.0
+  },
+  "onion_rings": {
+    "name": "Onion Rings",
+    "fdc_id": null,
+    "calories": 301,
+    "fat_g": 16.0,
+    "carbs_g": 36.0,
+    "sugar_g": 3.0,
+    "sodium_mg": 430.0
+  },
+  "oysters": {
+    "name": "Oysters",
+    "fdc_id": 175189,
+    "calories": 69,
+    "fat_g": 2.0,
+    "carbs_g": 4.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 212.0
+  },
+  "pad_thai": {
+    "name": "Pad Thai",
+    "fdc_id": null,
+    "calories": 225,
+    "fat_g": 9.0,
+    "carbs_g": 29.0,
+    "sugar_g": 4.0,
+    "sodium_mg": 490.0
+  },
+  "paella": {
+    "name": "Paella",
+    "fdc_id": null,
+    "calories": 180,
+    "fat_g": 6.0,
+    "carbs_g": 22.0,
+    "sugar_g": 1.0,
+    "sodium_mg": 520.0
+  },
+  "pancakes": {
+    "name": "Pancakes",
+    "fdc_id": null,
+    "calories": 227,
+    "fat_g": 8.0,
+    "carbs_g": 35.0,
+    "sugar_g": 8.0,
+    "sodium_mg": 380.0
+  },
+  "panna_cotta": {
+    "name": "Panna Cotta",
+    "fdc_id": null,
+    "calories": 200,
+    "fat_g": 14.0,
+    "carbs_g": 17.0,
+    "sugar_g": 16.0,
+    "sodium_mg": 60.0
+  },
+  "peking_duck": {
+    "name": "Peking Duck",
+    "fdc_id": null,
+    "calories": 337,
+    "fat_g": 28.0,
+    "carbs_g": 0.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 290.0
+  },
+  "pho": {
+    "name": "Pho",
+    "fdc_id": null,
+    "calories": 55,
+    "fat_g": 1.0,
+    "carbs_g": 8.0,
+    "sugar_g": 1.0,
+    "sodium_mg": 490.0
+  },
+  "pizza": {
+    "name": "Pizza",
+    "fdc_id": null,
+    "calories": 266,
+    "fat_g": 10.0,
+    "carbs_g": 33.0,
+    "sugar_g": 3.0,
+    "sodium_mg": 598.0
+  },
+  "pork_chop": {
+    "name": "Pork Chop",
+    "fdc_id": null,
+    "calories": 254,
+    "fat_g": 14.0,
+    "carbs_g": 0.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 70.0
+  },
+  "poutine": {
+    "name": "Poutine",
+    "fdc_id": null,
+    "calories": 250,
+    "fat_g": 14.0,
+    "carbs_g": 26.0,
+    "sugar_g": 1.0,
+    "sodium_mg": 420.0
+  },
+  "prime_rib": {
+    "name": "Prime Rib",
+    "fdc_id": null,
+    "calories": 297,
+    "fat_g": 22.0,
+    "carbs_g": 0.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 64.0
+  },
+  "pulled_pork_sandwich": {
+    "name": "Pulled Pork Sandwich",
+    "fdc_id": null,
+    "calories": 285,
+    "fat_g": 13.0,
+    "carbs_g": 25.0,
+    "sugar_g": 8.0,
+    "sodium_mg": 590.0
+  },
+  "ramen": {
+    "name": "Ramen",
+    "fdc_id": null,
+    "calories": 140,
+    "fat_g": 5.0,
+    "carbs_g": 18.0,
+    "sugar_g": 1.0,
+    "sodium_mg": 1080.0
+  },
+  "ravioli": {
+    "name": "Ravioli",
+    "fdc_id": null,
+    "calories": 220,
+    "fat_g": 8.0,
+    "carbs_g": 28.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 380.0
+  },
+  "red_velvet_cake": {
+    "name": "Red Velvet Cake",
+    "fdc_id": null,
+    "calories": 370,
+    "fat_g": 18.0,
+    "carbs_g": 50.0,
+    "sugar_g": 36.0,
+    "sodium_mg": 290.0
+  },
+  "risotto": {
+    "name": "Risotto",
+    "fdc_id": null,
+    "calories": 190,
+    "fat_g": 6.0,
+    "carbs_g": 28.0,
+    "sugar_g": 1.0,
+    "sodium_mg": 380.0
+  },
+  "samosa": {
+    "name": "Samosa",
+    "fdc_id": null,
+    "calories": 308,
+    "fat_g": 17.0,
+    "carbs_g": 34.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 480.0
+  },
+  "sashimi": {
+    "name": "Sashimi",
+    "fdc_id": null,
+    "calories": 130,
+    "fat_g": 5.0,
+    "carbs_g": 0.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 58.0
+  },
+  "scallops": {
+    "name": "Scallops",
+    "fdc_id": 175182,
+    "calories": 88,
+    "fat_g": 1.0,
+    "carbs_g": 4.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 392.0
+  },
+  "seaweed_salad": {
+    "name": "Seaweed Salad",
+    "fdc_id": null,
+    "calories": 45,
+    "fat_g": 0.5,
+    "carbs_g": 8.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 480.0
+  },
+  "shrimp_and_grits": {
+    "name": "Shrimp and Grits",
+    "fdc_id": null,
+    "calories": 188,
+    "fat_g": 8.0,
+    "carbs_g": 18.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 480.0
+  },
+  "spaghetti_bolognese": {
+    "name": "Spaghetti Bolognese",
+    "fdc_id": null,
+    "calories": 180,
+    "fat_g": 7.0,
+    "carbs_g": 20.0,
+    "sugar_g": 3.0,
+    "sodium_mg": 380.0
+  },
+  "spaghetti_carbonara": {
+    "name": "Spaghetti Carbonara",
+    "fdc_id": null,
+    "calories": 350,
+    "fat_g": 18.0,
+    "carbs_g": 30.0,
+    "sugar_g": 1.0,
+    "sodium_mg": 480.0
+  },
+  "spring_rolls": {
+    "name": "Spring Rolls",
+    "fdc_id": null,
+    "calories": 195,
+    "fat_g": 8.0,
+    "carbs_g": 25.0,
+    "sugar_g": 3.0,
+    "sodium_mg": 380.0
+  },
+  "steak": {
+    "name": "Steak",
+    "fdc_id": null,
+    "calories": 271,
+    "fat_g": 18.0,
+    "carbs_g": 0.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 60.0
+  },
+  "strawberry_shortcake": {
+    "name": "Strawberry Shortcake",
+    "fdc_id": null,
+    "calories": 286,
+    "fat_g": 11.0,
+    "carbs_g": 44.0,
+    "sugar_g": 24.0,
+    "sodium_mg": 220.0
+  },
+  "sushi": {
+    "name": "Sushi",
+    "fdc_id": null,
+    "calories": 143,
+    "fat_g": 1.0,
+    "carbs_g": 30.0,
+    "sugar_g": 4.0,
+    "sodium_mg": 440.0
+  },
+  "tacos": {
+    "name": "Tacos",
+    "fdc_id": null,
+    "calories": 226,
+    "fat_g": 10.0,
+    "carbs_g": 24.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 490.0
+  },
+  "takoyaki": {
+    "name": "Takoyaki",
+    "fdc_id": null,
+    "calories": 195,
+    "fat_g": 8.0,
+    "carbs_g": 22.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 480.0
+  },
+  "tiramisu": {
+    "name": "Tiramisu",
+    "fdc_id": null,
+    "calories": 290,
+    "fat_g": 17.0,
+    "carbs_g": 30.0,
+    "sugar_g": 20.0,
+    "sodium_mg": 95.0
+  },
+  "tuna_tartare": {
+    "name": "Tuna Tartare",
+    "fdc_id": null,
+    "calories": 132,
+    "fat_g": 5.0,
+    "carbs_g": 4.0,
+    "sugar_g": 1.0,
+    "sodium_mg": 310.0
+  },
+  "waffles": {
+    "name": "Waffles",
+    "fdc_id": null,
+    "calories": 291,
+    "fat_g": 14.0,
+    "carbs_g": 38.0,
+    "sugar_g": 8.0,
+    "sodium_mg": 390.0
+  }
+}
