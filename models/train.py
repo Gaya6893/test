@@ -155,8 +155,8 @@ def main():
     print("Loading Food-101 from HuggingFace Datasets …")
     ds = load_dataset("ethz/food101")
 # ── CPU quick-run: comment out these two lines for full GPU training ──
-    ds["train"]      = ds["train"].select(range(2000))
-    ds["validation"] = ds["validation"].select(range(500))
+    # ds["train"]      = ds["train"].select(range(2000))
+    # ds["validation"] = ds["validation"].select(range(500))
     class_names = ds["train"].features["label"].names
     print(f"  {len(class_names)} classes | train={len(ds['train'])} | val={len(ds['validation'])}")
 

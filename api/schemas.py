@@ -32,6 +32,12 @@ class Candidate(BaseModel):
     score: float
 
 
+# ── Canonical 8-field contract (consumed by Groups 3 & 4) ────────────────────
+class ContractResponse(NutritionResponse):
+    confidence:      Optional[float] = None
+    confidence_tier: Optional[str]   = None
+
+
 # ── Full scan response (superset of shared contract) ──────────────────────────
 class ScanResponse(NutritionResponse):
     """

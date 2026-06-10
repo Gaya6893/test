@@ -33,7 +33,7 @@ from PIL import Image
 # Ensure project root is on the path when run as a module
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from api.schemas import BarcodeScanRequest, Candidate, ScanResponse
+from api.schemas import BarcodeScanRequest, Candidate, ContractResponse, ScanResponse
 from data.pipeline import get_nutrition_by_barcode, get_nutrition_by_label
 from models.predict import load_model, predict
 
@@ -136,6 +136,65 @@ async def scan_barcode(body: BarcodeScanRequest):
         confidence_tier  = "high",
         food_unrecognized= None,
         source           = "open_food_facts",
+    )
+
+
+# ── Canonical contract endpoint ───────────────────────────────────────────────
+@app.post("/scan", response_model=ContractResponse, tags=["Scan"])
+async def scan(file: UploadFile = File(...)):
+    """
+    Run the full recognition pipeline on a photo and return the **canonical
+    VitalScan contract** — the exact eight-field JSON the overall process emits
+    for Groups 3 & 4.
+
+    This is the clean contract view of `/scan/photo`: it drops internal metadata
+    (`source`, `top_3_candidates`, `food_unrecognized`) and always returns the
+    same eight keys —
+    `name, sodium_mg, sugar_g, carbs_g, calories, fat_g, confidence, confidence_tier`.
+
+    Nutrition fields are `null` when confidence is low or the recognized food is
+    missing from the nutrition map; values are never fabricated.
+    """
+    if not _model_ready:
+        raise HTTPException(
+            status_code=503,
+            detail="Model not loaded. Train a checkpoint and restart the server.",
+        )
+
+    raw = await file.read()
+    try:
+        image = Image.open(io.BytesIO(raw)).convert("RGB")
+    except Exception:
+        raise HTTPException(status_code=400, detail="Could not decode image file.")
+
+    return _build_contract_response(predict(image))
+
+
+def _build_contract_response(prediction: dict) -> ContractResponse:
+    """Collapse a raw prediction into the eight-field shared contract."""
+    tier       = prediction.get("confidence_tier", "low")
+    confidence = prediction.get("confidence")
+
+    # Low confidence / unrecognized → all nutrition fields stay null
+    if tier == "low" or prediction.get("food_unrecognized"):
+        return ContractResponse(confidence=confidence, confidence_tier="low")
+
+    label     = prediction.get("nutrition_lookup_key") or prediction.get("label")
+    nutrition = get_nutrition_by_label(label)
+
+    # Recognized but absent from nutrition map → keep the name, nutrition null
+    if nutrition is None:
+        return ContractResponse(name=label, confidence=confidence, confidence_tier=tier)
+
+    return ContractResponse(
+        name      = nutrition["name"],
+        sodium_mg = nutrition["sodium_mg"],
+        sugar_g   = nutrition["sugar_g"],
+        carbs_g   = nutrition["carbs_g"],
+        calories  = nutrition["calories"],
+        fat_g     = nutrition["fat_g"],
+        confidence      = confidence,
+        confidence_tier = tier,
     )
 
 

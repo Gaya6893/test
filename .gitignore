@@ -19,6 +19,9 @@ checkpoints/
 # HuggingFace cache
 .cache/
 
+# Claude Code
+.claude/
+
 # IDE
 .vscode/
 .idea/
