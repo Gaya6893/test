@@ -6,6 +6,7 @@ Endpoints
 GET  /health            — liveness probe
 POST /scan/photo        — multipart image → nutrition JSON
 POST /scan/barcode      — {"barcode": "..."} → nutrition JSON
+GET  /result2           — latest scan output (8-field contract) for Team 4
 
 Auto-generated OpenAPI docs available at /docs (serves the API documentation
 deliverable for free via FastAPI's built-in Swagger UI).
@@ -22,6 +23,7 @@ Deploy to Render / Railway: point start command to this file.
 from __future__ import annotations
 
 import io
+import json
 import os
 import sys
 from pathlib import Path
@@ -58,6 +60,57 @@ app.add_middleware(
 
 CHECKPOINT = Path(os.environ.get("MODEL_CHECKPOINT", "checkpoints/best_model.pt"))
 _model_ready = False
+
+# ── Group 2 → Group 4 output handoff ──────────────────────────────────────────
+# Per the cross-team convention: store our output as JSON locally, then expose it
+# through a GET endpoint (/result2) so the downstream team (Group 4) can read the
+# latest food-scan result directly — no image upload required on their side.
+_CONTRACT_KEYS = (
+    "name", "sodium_mg", "sugar_g", "carbs_g",
+    "calories", "fat_g", "confidence", "confidence_tier",
+)
+OUTPUT_DIR = Path(__file__).resolve().parent.parent / "output"
+RESULT_FILE = OUTPUT_DIR / "result2.json"
+
+# Served before any scan has run (and even if the model isn't loaded yet) so the
+# integration never breaks during the combined demo.
+_SAMPLE_RESULT = {
+    "name": "Pizza",
+    "sodium_mg": 598.0,
+    "sugar_g": 3.0,
+    "carbs_g": 33.0,
+    "calories": 266.0,
+    "fat_g": 10.0,
+    "confidence": 0.82,
+    "confidence_tier": "high",
+}
+
+
+def _store_result(payload: dict) -> None:
+    """Persist the latest scan as the eight-field shared contract."""
+    contract = {key: payload.get(key) for key in _CONTRACT_KEYS}
+    try:
+        OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+        RESULT_FILE.write_text(json.dumps(contract, indent=2))
+    except OSError:
+        pass  # never let persistence break the API response
+
+
+@app.get("/result2", tags=["Integration"])
+async def result2():
+    """
+    Group 2's latest food-scan output as JSON — the endpoint Group 4 calls.
+
+    Returns the most recent `/scan` result (persisted to `output/result2.json`),
+    or a representative sample if no scan has run yet, so the eight-field contract
+    is always available even before the model is trained.
+    """
+    if RESULT_FILE.exists():
+        try:
+            return json.loads(RESULT_FILE.read_text())
+        except (OSError, ValueError):
+            pass
+    return _SAMPLE_RESULT
 
 
 # ── Lifecycle ─────────────────────────────────────────────────────────────────
@@ -106,7 +159,9 @@ async def scan_photo(file: UploadFile = File(...)):
         raise HTTPException(status_code=400, detail="Could not decode image file.")
 
     prediction = predict(image)
-    return _build_photo_response(prediction)
+    response = _build_photo_response(prediction)
+    _store_result(response.model_dump())
+    return response
 
 
 # ── Barcode endpoint ──────────────────────────────────────────────────────────
@@ -125,7 +180,7 @@ async def scan_barcode(body: BarcodeScanRequest):
             detail=f"Barcode '{body.barcode}' not found in Open Food Facts.",
         )
 
-    return ScanResponse(
+    response = ScanResponse(
         name      = nutrition.get("name"),
         sodium_mg = nutrition.get("sodium_mg"),
         sugar_g   = nutrition.get("sugar_g"),
@@ -137,6 +192,8 @@ async def scan_barcode(body: BarcodeScanRequest):
         food_unrecognized= None,
         source           = "open_food_facts",
     )
+    _store_result(response.model_dump())
+    return response
 
 
 # ── Canonical contract endpoint ───────────────────────────────────────────────
@@ -167,7 +224,9 @@ async def scan(file: UploadFile = File(...)):
     except Exception:
         raise HTTPException(status_code=400, detail="Could not decode image file.")
 
-    return _build_contract_response(predict(image))
+    contract = _build_contract_response(predict(image))
+    _store_result(contract.model_dump())
+    return contract
 
 
 def _build_contract_response(prediction: dict) -> ContractResponse:
